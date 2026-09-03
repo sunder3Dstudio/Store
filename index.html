@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunder 3D | Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- FONDO DE VIDEO GLOBAL -->
+    <div class="video-bg-wrapper">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="fondo.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- NAVBAR FIJO SUPERIOR -->
+    <header id="main-header">
+        <div id="nav-logo-slot"></div>
+        <div class="header-right">
+            <div id="cart-icon" onclick="toggleCartModal()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- LOGO ANIMADO -->
+    <div id="dynamic-logo">
+        <img src="image_0.png" alt="Sunder 3D Logo" id="logo-img">
+    </div>
+
+    <!-- VISTA PRINCIPAL (HOME) -->
+    <div id="home-view">
+        
+        <!-- SECCIÓN DE BIENVENIDA -->
+        <section id="hero-landing">
+            <div class="scroll-down-hint">
+                <span>DESLIZA HACIA ABAJO</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CATEGORÍAS -->
+        <section class="container" id="section-categories">
+            <h2 class="main-title">CATEGORÍAS</h2>
+            <div class="categories-grid">
+                
+                <div class="cat-card" onclick="abrirPantallaCategoria('epicas', 'Figuras Épicas')">
+                    <div class="image-box">
+                        <img src="abadon_2.jpeg" alt="Figuras Épicas">
+                        <div class="overlay"></div>
+                    </div>
+                    <h3>HEROES</h3>
+                </div>
+
+                <div class="cat-card" onclick="abrirPantallaCategoria('chibis', 'Chibis')">
+                    <div class="image-box">
+                        <img src="pudge_1.jpeg" alt="Chibis">
+                        <div class="overlay"></div>
+                    </div>
+                    <h3>CHIBIS</h3>
+                </div>
+
+                <div class="cat-card" onclick="abrirPantallaCategoria('waifus', 'Waifus')">
+                    <div class="image-box">
+                        <img src="qop_1.jpeg" alt="Waifus">
+                        <div class="overlay"></div>
+                    </div>
+                    <h3>WAIFUS</h3>
+                </div>
+
+                <div class="cat-card" onclick="abrirPantallaCategoria('llaveros', 'Llaveros')">
+                    <div class="image-box">
+                        <img src="inmortal.jpeg" alt="Llaveros">
+                        <div class="overlay"></div>
+                    </div>
+                    <h3>LLAVEROS</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE FIGURAS EN STOCK -->
+        <section class="container" id="section-stock">
+            <h2 class="main-title">FIGURAS EN STOCK </h2>
+            <div class="products-grid" id="stock-grid"></div>
+            <!-- 👇 MENSAJE DE PEDIDOS PERSONALIZADOS 👇 -->
+            <!-- MENSAJE DE PEDIDOS PERSONALIZADOS CLICABLE -->
+            <a href="https://wa.me/51928570482?text=¡Hola%20Sunder%203D!%20Quiero%20cotizar%20una%20figura%20personalizada" target="_blank" class="custom-order-banner">
+                <i class="fab fa-whatsapp banner-icon"></i>
+                <div class="banner-text">
+                    <p>RECUERDA QUE PUEDES HACER EL PEDIDO DE CUALQUIER <span>FIGURA PERSONALIZADA</span> A NUESTRO WHATSAPP</p>
+                </div>
+            </a>
+            <!-- FIN DEL MENSAJE -->
+            <!-- 👆 FIN DEL MENSAJE 👆 -->
+        </section>
+    </div>
+
+    <!-- VISTA DEDICADA DE CATEGORÍA -->
+    <div id="category-view" class="hidden-view">
+        <div class="container">
+            <button class="btn-back" onclick="volverAlInicio()">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </button>
+            <h2 class="main-title" id="cat-view-title">Categoría</h2>
+            <div class="products-grid" id="category-products-grid"></div>
+        </div>
+    </div>
+
+    <!-- BOTONES SOCIALES FLOTANTES -->
+    <div class="social-floating">
+        <a href="https://wa.me/51928570482" target="_blank" class="s-btn whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/" target="_blank" class="s-btn instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@sunder3d" target="_blank" class="s-btn tiktok" title="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <!-- MODAL DE DETALLE DEL PRODUCTO (INFO Y FOTOS) -->
+    <div id="product-detail-modal" class="modal">
+        <div class="modal-content product-detail-content">
+            <span class="close-modal" onclick="cerrarDetalleModal()">&times;</span>
+            <div class="product-detail-grid">
+                <!-- Galería de fotos -->
+                <div class="detail-gallery">
+                    <div class="main-img-container">
+                        <img id="detail-main-img" src="" alt="Foto Principal">
+                    </div>
+                    <div class="thumbnail-row" id="detail-thumbnails">
+                        <!-- Miniaturas inyectadas por JS -->
+                    </div>
+                </div>
+                <!-- Información del producto -->
+                <div class="detail-info">
+                    <h2 id="detail-title">Nombre del Producto</h2>
+                    <p class="detail-price" id="detail-price">S/ 0.00</p>
+                    <p class="detail-description" id="detail-description">Descripción...</p>
+                    <div class="detail-specs">
+                        <p><strong>📏 Altura / Tamaño:</strong> <span id="detail-size">-</span></p>
+                        <p><strong>🧵 Material:</strong> <span id="detail-material">PLA Premium / Resina</span></p>
+                    </div>
+                    <button class="btn-add-large" id="detail-add-btn">
+                        <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DEL CARRITO -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tu Pedido</h2>
+                <span class="close-modal" onclick="toggleCartModal()">&times;</span>
+            </div>
+            <ul id="cart-items"></ul>
+            <div class="modal-footer">
+                <p class="total">Total: S/ <span id="cart-total">0.00</span></p>
+                <button id="finalizar-compra-btn" onclick="enviarPedidoWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
