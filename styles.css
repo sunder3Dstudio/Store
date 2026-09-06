@@ -866,3 +866,101 @@ body {
         letter-spacing: 1px;
     }
 }
+
+/* --- PROMO PRIMAVERAL --- */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactamente 4 espacios */
+    gap: 20px;
+}
+
+/* Contenedor relativo para posicionar la etiqueta */
+.promo-grid .product-card {
+    position: relative;
+    border: 1px solid rgba(255, 204, 0, 0.4);
+}
+
+/* Insignia de descuento en la esquina superior derecha */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e60000;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 6px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(230, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* Adaptación a móviles (2 columnas para que no se aplaste) */
+@media (max-width: 768px) {
+    .promo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .discount-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+}
+/* Contenedor de precios en promoción */
+.promo-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 8px 0 12px 0;
+}
+
+/* Precio original tachado con línea roja */
+.price-original {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #888888;
+    text-decoration: line-through;
+    text-decoration-color: #ff3333;       /* Línea roja */
+    text-decoration-thickness: 2.5px;     /* Grosor de la línea tachada */
+}
+
+/* Precio con descuento: Más grande y dorado */
+.price-discount {
+    font-family: 'Teko', sans-serif;
+    font-size: 2.2rem;                    /* Tamaño grande e impactante */
+    font-weight: 700;
+    color: #ffcc00;                       /* Color dorado */
+    line-height: 1;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.3));
+}
+
+/* Ajuste para pantallas de celulares */
+@media (max-width: 768px) {
+    .price-original {
+        font-size: 0.95rem;
+        text-decoration-thickness: 2px;
+    }
+    .price-discount {
+        font-size: 1.8rem;
+    }
+}
+/* Alineación de precios en el modal de detalles */
+.promo-pricing-modal {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 6px 0 10px 0;
+}
+
+.promo-pricing-modal .price-original {
+    font-size: 1.2rem;
+}
+
+.promo-pricing-modal .price-discount {
+    font-size: 2.4rem;
+}
