@@ -14,7 +14,7 @@
     <!-- FONDO DE VIDEO GLOBAL -->
     <div class="video-bg-wrapper">
         <video autoplay muted loop playsinline id="bg-video">
-            <source src="fondo.mp4" type="video/mp4">
+            <source src="primavera.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </div>
@@ -44,6 +44,11 @@
                 <span>DESLIZA HACIA ABAJO</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
+        </section>
+        <!-- SECCIÓN PROMO PRIMAVERAL -->
+        <section class="container" id="section-promo">
+            <h2 class="main-title">PROMO PRIMAVERAL 🌸</h2>
+            <div class="products-grid promo-grid" id="promo-grid"></div>
         </section>
 
         <!-- SECCIÓN DE CATEGORÍAS -->
@@ -147,8 +152,10 @@
                     <p class="detail-price" id="detail-price">S/ 0.00</p>
                     <p class="detail-description" id="detail-description">Descripción...</p>
                     <div class="detail-specs">
-                        <p><strong>📏 Altura / Tamaño:</strong> <span id="detail-size">-</span></p>
-                        <p><strong>🧵 Material:</strong> <span id="detail-material">PLA Premium / Resina</span></p>
+                        <p><strong>📏Altura / Tamaño:</strong> <span id="detail-size"></span></p>
+                        <p id="row-detail-time"><strong>⏳Tiempo de producción:</strong> <span id="detail-time"></span></p>
+                        <p><strong>🧵Material:</strong> <span id="detail-material"></span></p>
+                        <p class="advance-notice"><i class="fas fa-hand-holding-usd"></i> Separa tu pedido con un <strong>50% de adelanto</strong></p>
                     </div>
                     <button class="btn-add-large" id="detail-add-btn">
                         <i class="fas fa-cart-plus"></i> Agregar al Carrito
