@@ -874,8 +874,8 @@ function enviarPedidoWhatsApp() {
     const total = document.getElementById('cart-total').innerText;
     mensaje += `\n*Total a pagar:* S/ ${total}`;
 
-    const telefono = "51928570482"; // Reemplaza con tu número real
-    window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    const url = `https://api.whatsapp.com/send?phone=51928570482&text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
 }
 document.addEventListener('DOMContentLoaded', () => {
     // Las funciones que ya tenías:
