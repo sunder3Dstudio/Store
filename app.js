@@ -49,7 +49,7 @@ const inventario = [
         categoria: "promo", 
         precio: 180.00, 
         imagenes: ["IO_1.jpeg",
-            "io_2.jpeg",
+            "IO_2.jpeg",
         ],
         descripcion: "",
         tamaño: "13 cm",
