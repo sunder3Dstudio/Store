@@ -1,4 +1,62 @@
 const inventario = [
+    // PROMOS
+    
+    { 
+        id: 201,
+        nombre: "SAPITO SELFIE", 
+        categoria: "promo", 
+        precio: 90.00, 
+        imagenes: ["selfi_1.jpeg",
+            "selfi_2.jpeg",
+            "selfi_3.jpeg",
+            "selfi_4.jpeg",
+        ],
+        descripcion: "",
+        tamaño: "9 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+        
+    },
+    { 
+        id: 202,
+        nombre: "FLAUTIN", 
+        categoria: "promo", 
+        precio: 30.00, 
+        imagenes: ["flautin.jpeg"],
+        descripcion: "",
+        tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
+        material: "Resina"
+    },
+    { 
+        id: 203,
+        nombre: "CARNIVORA CURIOSA", 
+        categoria: "promo", 
+        precio: 80.00, 
+        imagenes: ["flor_1.jpeg",
+            "flor_2.jpeg",
+            "flor_3.jpeg",
+        ],
+        descripcion: "",
+        tamaño: "7.5 cm",
+        tiempoProduccion: "4 dias",
+        material: "Resina"
+        
+    },
+    { 
+        id: 204,
+        nombre: "IO ", 
+        categoria: "promo", 
+        precio: 180.00, 
+        imagenes: ["io_1.jpeg",
+            "io_2.jpeg",
+        ],
+        descripcion: "",
+        tamaño: "13 cm",
+        tiempoProduccion: "5 dias",
+        material: "Resina"
+        
+    },
     // FIGURAS EN STOCK (Aparecen en el inicio)
     { 
         id: 101, 
@@ -66,6 +124,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "30 cm ",
+        tiempoProduccion: "14 dias",
         material: "Resina "
     },
     { 
@@ -81,6 +140,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "34.5 cm",
+        tiempoProduccion: "15 dias",
         material: "Resina + Base en PLA"
     },
     { 
@@ -95,6 +155,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "24.5 cm",
+        tiempoProduccion: "10 dias",
         material: "Resina"
     },
     { 
@@ -109,6 +170,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "20 cm",
+        tiempoProduccion: "10 dias",
         material: "Resina"
     },
     { 
@@ -124,6 +186,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "26.5 cm",
+        tiempoProduccion: "10 dias",
         material: "Resina"
     },
     { 
@@ -139,8 +202,25 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "20 cm",
+        tiempoProduccion: "10 dias",
+        material: "Resina"
+    },{ 
+        id: 39,
+        nombre: "MARS", 
+        categoria: "epicas", 
+        precio: 350.00, 
+        imagenes: ["mars_2.jpeg",
+            "mas_1.jpeg",
+            "mars_3.jpeg",
+            "mars_4.jpeg"
+            
+        ],
+        descripcion: "",
+        tamaño: "15 cm",
+        tiempoProduccion: "7 dias",
         material: "Resina"
     },
+
 
 
 
@@ -158,6 +238,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "12 cm",
+        tiempoProduccion: "",
         material: "RESINA"
     },
     { 
@@ -170,6 +251,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "12 cm",
+        tiempoProduccion: "",
         material: "RESINA"
     },
     { 
@@ -180,6 +262,7 @@ const inventario = [
         imagenes: ["drowchibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
+        tiempoProduccion: "",
         material: "Resina"
     },
     { 
@@ -190,6 +273,7 @@ const inventario = [
         imagenes: ["largochibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
+        tiempoProduccion: "",
         material: "Resina"
     },{ 
         id: 30,
@@ -199,6 +283,7 @@ const inventario = [
         imagenes: ["mkchibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
+        tiempoProduccion: "",
         material: "Resina"
     },{ 
         id: 31,
@@ -208,6 +293,7 @@ const inventario = [
         imagenes: ["qopchibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
+        tiempoProduccion: "",
         material: "Resina"
     },
     { 
@@ -222,6 +308,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "9 cm",
+        tiempoProduccion: "",
         material: "Resina"
     },
 
@@ -239,6 +326,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "55 cm",
+        tiempoProduccion: "20 dias",
         material: "Resina "
     },
     { 
@@ -254,6 +342,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "26.5 cm",
+        tiempoProduccion: "14 dias",
         material: "Resina"
     },
 
@@ -267,7 +356,8 @@ const inventario = [
             "inmortal.jpeg"
         ],
         descripcion: "",
-        tamaño: "4.5     cm",
+        tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "resina"
     },
     { 
@@ -280,6 +370,7 @@ const inventario = [
         ],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -290,6 +381,7 @@ const inventario = [
         imagenes: ["psitola.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -300,6 +392,7 @@ const inventario = [
         imagenes: ["torero.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -310,6 +403,7 @@ const inventario = [
         imagenes: ["navideño.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -320,6 +414,7 @@ const inventario = [
         imagenes: ["acordeon.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -330,6 +425,7 @@ const inventario = [
         imagenes: ["campanillas.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -340,6 +436,7 @@ const inventario = [
         imagenes: ["campanillas_2.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -350,6 +447,7 @@ const inventario = [
         imagenes: ["collar.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -360,6 +458,7 @@ const inventario = [
         imagenes: ["flautin.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -370,6 +469,7 @@ const inventario = [
         imagenes: ["lloron.jpeg"],
         descripcion: "Llavero resistente con argolla reforzada.",
         tamaño: "5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -380,6 +480,7 @@ const inventario = [
         imagenes: ["oro.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -390,6 +491,7 @@ const inventario = [
         imagenes: ["platillos.jpeg"],
         descripcion: "",
         tamaño: "4 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -400,6 +502,7 @@ const inventario = [
         imagenes: ["sincalibrar.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -410,6 +513,7 @@ const inventario = [
         imagenes: ["heraldo.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -420,6 +524,7 @@ const inventario = [
         imagenes: ["guardian.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -430,6 +535,7 @@ const inventario = [
         imagenes: ["cruzado.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -440,6 +546,7 @@ const inventario = [
         imagenes: ["arconte.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -450,6 +557,7 @@ const inventario = [
         imagenes: ["leyenda.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -460,6 +568,7 @@ const inventario = [
         imagenes: ["ancestral.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -470,6 +579,7 @@ const inventario = [
         imagenes: ["divino.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     { 
@@ -480,6 +590,7 @@ const inventario = [
         imagenes: ["inmor.jpeg"],
         descripcion: "",
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },{ 
         id: 38,
@@ -488,7 +599,9 @@ const inventario = [
         precio: 30.00, 
         imagenes: ["inmortal25k.jpeg"],
         descripcion: "",
+
         tamaño: "4.5 cm",
+        tiempoProduccion: "2 dias",
         material: "Resina"
     },
     
@@ -540,6 +653,46 @@ function crearCardHTML(p) {
         </div>
     `;
 }
+// --- RENDERIZAR SECCIÓN PROMO PRIMAVERAL CON DESCUENTO ---
+function renderizarPromociones() {
+    const promoGrid = document.getElementById('promo-grid');
+    if (!promoGrid) return;
+
+    // Filtra hasta 4 figuras con categoría 'promo'
+    const figurasPromo = inventario.filter(p => p.categoria === 'promo').slice(0, 4);
+
+    let htmlContenido = '';
+
+    figurasPromo.forEach(p => {
+        // Cálculo del 20% de descuento
+        const precioConDescuento = (p.precio * 0.80).toFixed(2);
+        const precioOriginal = p.precio.toFixed(2);
+
+        htmlContenido += `
+            <div class="product-card" onclick="abrirDetalleModal(${p.id})">
+                <span class="discount-badge">-20%</span>
+
+                <div class="product-img-box">
+                    <img src="${p.imagenes[0]}" alt="${p.nombre}">
+                </div>
+
+                <h4 class="product-name">${p.nombre}</h4>
+                
+                <!-- Precios: tachado y nuevo -->
+                <div class="promo-pricing">
+                    <span class="price-original">S/ ${precioOriginal}</span>
+                    <span class="price-discount">S/ ${precioConDescuento}</span>
+                </div>
+
+                <button class="btn-add" onclick="event.stopPropagation(); agregarAlCarrito(${p.id})">
+                    Agregar al Carrito
+                </button>
+            </div>
+        `;
+    });
+
+    promoGrid.innerHTML = htmlContenido;
+}
 
 // --- MODAL DE DETALLES DEL PRODUCTO ---
 function abrirDetalleModal(id) {
@@ -550,9 +703,31 @@ function abrirDetalleModal(id) {
 
     // Llenar datos de texto
     document.getElementById('detail-title').innerText = prod.nombre;
-    document.getElementById('detail-price').innerText = `S/ ${prod.precio.toFixed(2)}`;
+    // Mostrar precio con descuento si es promo
+    const detailPriceElem = document.getElementById('detail-price');
+    if (prod.categoria === 'promo') {
+        const precioConDescuento = (prod.precio * 0.80).toFixed(2);
+        const precioOriginal = prod.precio.toFixed(2);
+        detailPriceElem.innerHTML = `
+            <div class="promo-pricing-modal">
+                <span class="price-original">S/ ${precioOriginal}</span>
+                <span class="price-discount">S/ ${precioConDescuento}</span>
+            </div>
+        `;
+    } else {
+        detailPriceElem.innerText = `S/ ${prod.precio.toFixed(2)}`;
+    }
     document.getElementById('detail-description').innerText = prod.descripcion || "Figura impresa en 3D con acabados de alta calidad.";
     document.getElementById('detail-size').innerText = prod.tamaño || "Medida estándar";
+    const filaTiempo = document.getElementById('row-detail-time');
+        if (filaTiempo) {
+            if (prod.categoria === 'stock') {
+                filaTiempo.style.display = 'none';
+        } else {
+            filaTiempo.style.display = 'block';
+                document.getElementById('detail-time').innerText = prod.tiempoProduccion || "2 a 4 días hábiles";
+        }
+}
     document.getElementById('detail-material').innerText = prod.material || "PLA Premium / Resina";
 
     // Cargar fotos y miniaturas
@@ -633,7 +808,15 @@ function volverAlInicio() {
 function agregarAlCarrito(id) {
     const item = inventario.find(p => p.id === id);
     if (item) {
-        carrito.push(item);
+        // Si es de promo le aplicamos el 20% de descuento al precio
+        const precioCobrar = item.categoria === 'promo' ? item.precio * 0.80 : item.precio;
+
+        // Metemos una copia al carrito con el precio final ya calculado
+        carrito.push({
+            ...item,
+            precio: precioCobrar
+        });
+
         actualizarCarrito();
     }
 }
@@ -694,3 +877,12 @@ function enviarPedidoWhatsApp() {
     const telefono = "51928570482"; // Reemplaza con tu número real
     window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // Las funciones que ya tenías:
+    cargarProductosStock(); 
+    // ...
+    
+    // 👇 Agregas esta línea:
+    renderizarPromociones();
+});
+renderizarPromociones();
