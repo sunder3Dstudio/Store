@@ -1614,3 +1614,33 @@ a[href*="tiktok"]:hover {
     justify-content: center !important;
     margin: 0 !important;
 }
+
+@media (max-width: 600px) {
+    /* Reduce la separación entre buscador y carrito */
+    .header-right {
+        gap: 6px !important;
+    }
+
+    /* La cápsula del buscador no se desborda */
+    .search-box {
+        max-width: 155px !important;
+        padding: 2px 6px !important;
+    }
+
+    /* El ancho del texto al abrirse se queda en un límite seguro */
+    .search-box.open #input-buscador {
+        width: 105px !important;       /* Tamaño justo para escribir sin tocar el logo */
+        padding: 4px 6px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Ícono de la lupa ligeramente más compacto */
+    #btn-toggle-buscar {
+        padding: 4px !important;
+    }
+
+    #btn-toggle-buscar svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
