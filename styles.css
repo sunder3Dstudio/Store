@@ -1,0 +1,1646 @@
+@font-face {
+    font-family: 'Microsoft Uighur Custom';
+    src: url('msuighur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Teko:wght@600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070707;
+    color: #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- FONDO DE VIDEO GLOBAL --- */
+.video-bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 7, 7, 0.75);
+}
+
+/* --- HEADER SUPERIOR --- */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background: rgba(10, 10, 10, 0.1);
+    backdrop-filter: blur(12px);
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+#nav-logo-slot {
+    width: 200px;
+    height: 100%;
+}
+
+#cart-icon {
+    font-size: 1.15rem;
+    cursor: pointer;
+    background: rgba(20, 20, 20, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: 1px solid #ffcc00;
+    color: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#cart-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px rgba(255, 204, 0, 0.5);
+}
+
+#cart-count {
+    color: #ffcc00;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* --- LOGO DINÁMICO --- */
+#dynamic-logo {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(85vw, 750px);
+    z-index: 1100;
+    pointer-events: none;
+    transition: top 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                left 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 35px rgba(255, 180, 0, 0.5));
+    transition: filter 0.5s ease;
+}
+
+/* Logo en la esquina superior izquierda (Alineado perfectamente dentro del header) */
+#dynamic-logo.shrunk {
+    top: 42px;
+    left: 40px;
+    transform: translate(0, -50%);
+    width: 175px;
+}
+
+#dynamic-logo.shrunk #logo-img {
+    filter: drop-shadow(0 0 10px rgba(255, 180, 0, 0.4));
+}
+
+/* --- HERO INICIAL --- */
+#hero-landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+}
+
+.scroll-down-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #ffcc00;
+    letter-spacing: 3px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    animation: bounce 2.2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* --- CONTENEDORES Y ESPACIADO --- */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 30px 60px; /* Margen superior amplio para nunca tapar el título con el header */
+    position: relative;
+    z-index: 2;
+}
+
+.main-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 2rem;
+    color: #ffcc00;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    border-left: 6px solid #ffcc00;
+    padding-left: 16px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+}
+
+/* --- CATEGORÍAS (TARJETAS ALTAS ESTILO POSTER) --- */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 80px;
+}
+
+.cat-card {
+    background: rgba(16, 16, 16, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffcc00;
+    box-shadow: 0 15px 35px rgba(255, 204, 0, 0.3);
+}
+
+.image-box {
+    position: relative;
+    width: 100%;
+    height: 420px; /* Altura ideal para figuras verticales completas */
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra toda la figura sin recortar */
+    padding: 10px;
+    transition: transform 0.4s ease;
+}
+
+.cat-card:hover .image-box img {
+    transform: scale(1.06);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(10,10,10,0.9) 100%);
+}
+
+.cat-card h3 {
+    font-family: 'Orbitron', sans-serif; /* 👈 Pon aquí la fuente que te guste */
+    font-size: 1.15rem;                  /* Tamaño de la letra */
+    font-weight: 700;
+    letter-spacing: 2px;                 /* Espaciado entre letras estilo gamer */
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 10px;
+    background: #101010;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- PRODUCTOS / STOCK --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: rgba(16, 16, 16, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffcc00;
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.25);
+}
+
+.product-img-box {
+    width: 100%;
+    height: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #0d0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1f1f1f;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-box img {
+    transform: scale(1.05);
+}
+
+.product-name {
+    font-family: 'Orbitron', sans-serif; /* 👈 AQUÍ SE DEFINE LA FUENTE */
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1px;                 /* Da un estilo espaciado muy pro */
+    text-transform: uppercase;           /* Opcional: para que se vea todo en mayúsculas firmes */
+    margin-bottom: 8px;
+    color: #eee;
+}
+
+.product-price {
+    color: #ffcc00;
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.btn-add {
+    font-family: 'teko', sans-serif; /* 👈 Cambia aquí la fuente */
+    font-size: 0.95rem;                  /* Tamaño de la letra */
+    font-weight: 700;
+    letter-spacing: 1.5px;               /* Separación entre letras */
+    text-transform: uppercase;           /* Para que salga todo en mayúsculas firmes */
+    color: #000000;                      /* Color del texto */
+    background: #ffcc00;                 /* Fondo dorado */
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-add:hover {
+    background: #e6b800;
+    transform: scale(1.02);
+}
+
+/* --- BOTONES SOCIALES FLOTANTES --- */
+.social-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 999;
+}
+
+.s-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.55rem;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.s-btn:hover {
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.9);
+}
+
+.whatsapp { background-color: #25D366; }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.tiktok { background-color: #000; border: 1.5px solid #333; }
+
+/* --- VISTA DE CATEGORÍA AISLADA --- */
+.hidden-view {
+    display: none;
+}
+
+#category-view .container {
+    padding-top: 110px;
+}
+
+.btn-back {
+    background: rgba(22, 22, 22, 0.95);
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-back:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* --- MODAL DE DETALLES --- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 2000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.product-detail-content {
+    max-width: 1100px;
+    width: 90vw;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1.5px solid rgba(255, 204, 0, 0.5);
+    background: rgba(14, 14, 14, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95);
+    position: relative;
+}
+
+.product-detail-content .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.4rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 10;
+}
+
+.product-detail-content .close-modal:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.detail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.main-img-container {
+    width: 100%;
+    height: 480px;
+    background: #0a0a0a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#detail-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 6px 2px;
+}
+
+.thumb-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+    background: #111;
+}
+
+.thumb-img:hover, .thumb-img.active {
+    border-color: #ffcc00;
+    transform: scale(1.06);
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#detail-title {
+    font-family: 'teko', sans-serif; /* 👈 Fuente del título (Gamer / Tecnológica) */
+    font-size: 2.3rem;                   /* Tamaño del título */
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1.15;
+}
+
+.detail-price {
+    color: #ffcc00;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.detail-description {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.detail-specs {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px 22px;
+    border-radius: 10px;
+    border-left: 5px solid #ffcc00;
+    font-size: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-add-large {
+    font-family: 'Orbitron', sans-serif; /* 👈 Cambia aquí la fuente */
+    font-size: 1.25rem;                  /* Tamaño de la letra */
+    font-weight: 800;                    /* Grosor bien marcado */
+    letter-spacing: 2px;                 /* Separación entre letras estilo gamer */
+    text-transform: uppercase;           /* Todo en mayúsculas firmes */
+    color: #000000;                      /* Color del texto (negro) */
+    background: #ffcc00;                 /* Fondo dorado */
+    border: none;
+    padding: 16px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-add-large:hover {
+    background: #e6b800;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+}
+
+/* MODAL CARRITO */
+.modal-content:not(.product-detail-content) {
+    background: #141414;
+    width: 90%;
+    max-width: 460px;
+    margin: 90px auto;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    padding-bottom: 12px;
+}
+
+.modal-header .close-modal {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#cart-items {
+    list-style: none;
+    margin: 15px 0;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.cart-empty {
+    text-align: center;
+    color: #888;
+    padding: 15px 0;
+    font-size: 1.1rem;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #252525;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.cart-item-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f0f0f0;
+}
+
+.cart-item-price {
+    font-size: 1rem;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Botón de tacho de basura */
+.btn-remove-item {
+    background: transparent;
+    border: none;
+    color: #ff4444;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-remove-item:hover {
+    background: rgba(255, 68, 68, 0.15);
+    transform: scale(1.15);
+    color: #ff6666;
+}
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+}
+
+#finalizar-compra-btn {
+    /* 👇 Cambia aquí la tipografía que prefieras */
+    font-family: 'Orbitron', sans-serif; 
+    
+    font-size: 1.05rem;                  /* Tamaño de letra */
+    font-weight: 700;                    /* Grosor */
+    letter-spacing: 1.5px;               /* Separación entre letras estilo gamer */
+    text-transform: uppercase;           /* Texto en mayúsculas firmes */
+    
+    background: #25D366;                 /* Verde WhatsApp */
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+#finalizar-compra-btn:hover {
+    background: #20ba5a;
+    transform: scale(1.02);
+}
+
+/* =======================================================
+   ADAPTACIÓN PARA CELULARES (<= 1024px / <= 768px)
+   ======================================================= */
+@media (max-width: 1024px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #main-header {
+        height: 75px;
+        padding: 0 16px;
+    }
+
+    #cart-icon {
+        font-size: 1rem;
+        padding: 8px 14px;
+    }
+
+    #dynamic-logo {
+        width: 88vw;
+    }
+
+    #dynamic-logo.shrunk {
+        top: 38px;
+        left: 16px;
+        width: 140px;
+    }
+
+    .container {
+        padding: 60px 14px 40px;
+    }
+
+    #category-view .container {
+        padding-top: 90px;
+    }
+
+    .main-title {
+        font-size: 1.4rem;
+        margin-bottom: 22px;
+        padding-left: 10px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-bottom: 40px;
+    }
+
+    .image-box {
+        height: 230px;
+    }
+
+    .cat-card h3 {
+        font-size: 1rem;
+        padding: 12px 6px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+        gap: 14px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-img-box {
+        height: 190px;
+        margin-bottom: 8px;
+    }
+
+    .product-name {
+        font-size: 0.95rem;
+    }
+
+    .product-price {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .btn-add {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    .social-floating {
+        bottom: 20px;
+        right: 16px;
+        gap: 10px;
+    }
+
+    .s-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 1.35rem;
+    }
+
+    .product-detail-content {
+        width: 92%;
+        max-width: 480px;
+        margin: 30px auto;
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .product-detail-content .close-modal {
+        top: 12px;
+        right: 16px;
+        font-size: 2rem;
+    }
+
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .main-img-container {
+        height: 270px;
+    }
+
+    .thumb-img {
+        width: 65px;
+        height: 65px;
+    }
+
+    #detail-title {
+        font-size: 1.45rem;
+    }
+
+    .detail-price {
+        font-size: 1.6rem;
+    }
+
+    .detail-description {
+        font-size: 1rem;
+    }
+}
+/* --- AVISO DE PEDIDOS PERSONALIZADOS (AMARILLO) --- */
+.custom-order-banner {
+    margin-top: 50px;
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(12px);
+    border: 2px dashed #ffcc00;
+    border-radius: 14px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    text-decoration: none; /* 👈 Quita la línea de enlace */
+    cursor: pointer;       /* 👈 Muestra la manito */
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-order-banner:hover {
+    border-color: #ffe680;
+    box-shadow: 0 0 35px rgba(255, 204, 0, 0.35);
+    transform: translateY(-3px);
+}
+
+.banner-icon {
+    font-size: 2.4rem;
+    color: #ffcc00;
+    filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.5));
+}
+
+.banner-text p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffcc00;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.banner-text p span {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Adaptación para pantallas de celular */
+@media (max-width: 768px) {
+    .custom-order-banner {
+        flex-direction: column;
+        padding: 20px 14px;
+        margin-top: 35px;
+        gap: 12px;
+    }
+
+    .banner-icon {
+        font-size: 2rem;
+    }
+
+    .banner-text p {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* --- PROMO PRIMAVERAL --- */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactamente 4 espacios */
+    gap: 20px;
+}
+
+/* Contenedor relativo para posicionar la etiqueta */
+.promo-grid .product-card {
+    position: relative;
+    border: 1px solid rgba(255, 204, 0, 0.4);
+}
+
+/* Insignia de descuento en la esquina superior derecha */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e60000;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 6px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(230, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* Adaptación a móviles (2 columnas para que no se aplaste) */
+@media (max-width: 768px) {
+    .promo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .discount-badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+}
+/* Contenedor de precios en promoción */
+.promo-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 8px 0 12px 0;
+}
+
+/* Precio original tachado con línea roja */
+.price-original {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #888888;
+    text-decoration: line-through;
+    text-decoration-color: #ff3333;       /* Línea roja */
+    text-decoration-thickness: 2.5px;     /* Grosor de la línea tachada */
+}
+
+/* Precio con descuento: Más grande y dorado */
+.price-discount {
+    font-family: 'Teko', sans-serif;
+    font-size: 2.2rem;                    /* Tamaño grande e impactante */
+    font-weight: 700;
+    color: #ffcc00;                       /* Color dorado */
+    line-height: 1;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.3));
+}
+
+/* Ajuste para pantallas de celulares */
+@media (max-width: 768px) {
+    .price-original {
+        font-size: 0.95rem;
+        text-decoration-thickness: 2px;
+    }
+    .price-discount {
+        font-size: 1.8rem;
+    }
+}
+/* Alineación de precios en el modal de detalles */
+.promo-pricing-modal {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 6px 0 10px 0;
+}
+
+.promo-pricing-modal .price-original {
+    font-size: 1.2rem;
+}
+
+.promo-pricing-modal .price-discount {
+    font-size: 2.4rem;
+}
+
+/* Contenedor relativo para posicionar las flechas */
+.promo-carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Flechas de navegación (ocultas por defecto en PC) */
+.promo-nav-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ffcc00;
+    color: #ffcc00;
+    font-size: 2rem;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    line-height: 1;
+    transition: background 0.3s;
+}
+
+.promo-nav-btn:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+.promo-nav-btn.prev { left: -10px; }
+.promo-nav-btn.next { right: -10px; }
+
+/* Puntitos indicadores */
+.promo-dots {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.promo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #444;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.promo-dot.active {
+    background: #ffcc00;
+    transform: scale(1.3);
+}
+
+/* --- SOLO EN CELULAR (MENOR A 768px) --- */
+@media (max-width: 768px) {
+    /* Mostramos las flechas y los puntos */
+    .promo-nav-btn,
+    .promo-dots {
+        display: flex;
+    }
+
+    /* La cuadrícula pasa a mostrar solo 1 columna fija */
+    .promo-grid {
+        display: flex !important;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Cada tarjeta ocupa el 100% pero solo se muestra la activa */
+    .promo-grid .product-card {
+        display: none;
+        width: 100%;
+        animation: fadeInPromo 0.4s ease-in-out;
+    }
+
+    /* Solo la tarjeta con clase .promo-activa será visible */
+    .promo-grid .product-card.promo-activa {
+        display: flex;
+    }
+}
+
+@keyframes fadeInPromo {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.custom-order-banner {
+    position: relative;
+    background: linear-gradient(135deg, rgba(20, 20, 25, 0.95), rgba(10, 10, 12, 0.98));
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    border-left: 6px solid #ffcc00;
+    border-radius: 0px !important;
+    padding: 18px 25px;
+    margin: 35px auto;
+    max-width: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    /* Efecto de resplandor gamer */
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.15), inset 0 0 15px rgba(255, 204, 0, 0.05);
+    /* Fondo sutil tipo rejilla de juego */
+    background-image: radial-gradient(rgba(255, 204, 0, 0.08) 1px, transparent 0);
+    background-size: 16px 16px;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.custom-order-banner p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+.custom-order-banner p span {
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+
+/* --- TOAST GAMER HUD MINIMALISTA --- */
+/* --- TOAST GAMER HUD (LIBRE DE BOTONES FLOTANTES) --- */
+.toast-gamer,
+#toast-notificacion {
+    position: fixed !important;
+    bottom: 90px !important;                 /* Sube arriba del menú/redes */
+    left: 50% !important;
+    transform: translateX(-50%) translateY(30px) scale(0.95) !important;
+    background: #0d0f14 !important;
+    border: 1px solid rgba(255, 204, 0, 0.5) !important;
+    border-left: 4px solid #ffcc00 !important;
+    border-radius: 0px !important;
+    padding: 8px 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    max-width: 85vw !important;
+    z-index: 999999 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 12px rgba(255, 204, 0, 0.25) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform 0.25s ease, opacity 0.2s ease !important;
+}
+
+.toast-gamer.visible,
+#toast-notificacion.visible {
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.toast-gamer span,
+#toast-notificacion span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.72rem !important;
+    color: #ffffff !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+}
+
+/* codigo para ultim tipografia*/
+/* Aplica Microsoft Uighur a párrafos, enlaces, botones, precios e inputs */
+body,
+p,
+span,
+a,
+button,
+input,
+select,
+textarea,
+.product-price,
+.promo-pricing,
+.price-discount,
+.price-original,
+.banner-text {
+    font-family: 'Microsoft Uighur Custom', 'Microsoft Uighur', sans-serif !important;
+}
+
+/* Protege la tipografía gamer en títulos y logos */
+h1, h2, h3, h4, h5, h6,
+.main-title,
+.logo,
+.product-name {
+    font-family: 'Orbitron', sans-serif !important;
+}
+/* Montserrat ExtraBold para TÍTULOS, NOMBRES Y BANNER */
+h1, h2, h3, h4, h5, h6,
+.main-title,
+.logo,
+.product-name,
+.custom-order-banner,
+.custom-order-banner p,
+.banner-text,
+.banner-text p {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    text-transform: uppercase; /* Opcional: mantiene la presencia imponente */
+}
+
+/* Resto de la tienda (precios, descripciones, botones) con su fuente normal/secundaria */
+body,
+p,
+span,
+button,
+.product-price,
+.price-discount,
+.price-original {
+    font-family: 'Rajdhani', sans-serif; /* O la fuente que elijas para los datos secundarios */
+}
+
+
+/* Unifica todo el texto y span del banner en color dorado gamer */
+.custom-order-banner .banner-text p,
+.custom-order-banner .banner-text span,
+.banner-text p,
+.banner-text span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    color: #ffcc00 !important;              /* Mismo tono amarillo/dorado del borde */
+    border-bottom: none !important;         /* Quita el subrayado */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.4) !important; /* Brillo neón sutil */
+}
+
+/* --- PUNTO 3: PRECIO TACHADO CON ALTO CONTRASTE --- */
+.price-original,
+.precio-anterior,
+s, strike, del {
+    color: #a0aec0 !important;                /* Gris claro legible sobre negro */
+    text-decoration: line-through #ff3344 2px !important; /* Línea roja visible */
+    font-size: 0.85rem !important;
+    opacity: 0.85;
+}
+
+/* --- PUNTO 5: ESPACIADO DE LOS DOTS E IDENTACIÓN DE CATEGORÍAS --- */
+.carousel-dots,
+.dots-container {
+    margin-top: 14px !important;
+    margin-bottom: 22px !important;            /* Separa los puntos del título Categorías */
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* --- PUNTO 4: OCULTAR FLECHAS EN PANTALLAS MÓVILES --- */
+@media (max-width: 768px) {
+    .carousel-btn,
+    .carousel-arrow,
+    .btn-prev,
+    .btn-next {
+        display: none !important;              /* Oculta los círculos negros con flechas */
+    }
+
+    /* Opcional: añade deslizamiento nativo suave por CSS si las tarjetas están en fila */
+    .carousel-track,
+    .carousel-container {
+        touch-action: pan-y pinch-zoom;        /* Permite scroll vertical y gestos horizontales */
+    }
+}
+/* Ocultar definitivamente las flechas de navegación del carrusel */
+.promo-btn,
+.promo-arrow,
+.carousel-btn,
+.carousel-arrow,
+.btn-promo-prev,
+.btn-promo-next,
+button[onclick*="cambiarPromo"] {
+    display: none !important;
+}
+
+/* =======================================================
+   MEJORAS PUNTOS 2, 4 Y 6 (PRECIOS, BADGE Y BOTONES FLOTANTES)
+==============================
+   FORZADO EXACTO PUNTOS 2, 4 Y 6
+   ======================================================= */
+
+/* --- PUNTO 2: PRECIO TACHADO CLARO Y VISIBLE --- */
+#promo-grid s,
+#promo-grid del,
+#promo-grid strike,
+#promo-grid span[style*="line-through"],
+.promo-pricing s,
+.promo-pricing del {
+    color: #e2e8f0 !important;                    /* Gris blanquecino legible */
+    text-decoration: line-through #ff3344 2px !important; /* Tachado rojo vivo */
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+    margin-bottom: 4px !important;
+}
+
+
+/* --- PUNTO 6: REDES FLOTANTES TRASLÚCIDAS PARA NO ESTORBAR --- */
+a[href*="wa.me"],
+a[href*="whatsapp"],
+a[href*="instagram"],
+a[href*="tiktok"] {
+    opacity: 0.55 !important;                     /* Casi invisibles por defecto */
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+
+/* Al pasarles el mouse o tocarlas */
+a[href*="wa.me"]:hover,
+a[href*="whatsapp"]:hover,
+a[href*="instagram"]:hover,
+a[href*="tiktok"]:hover {
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+}
+
+/* Agrupador de la derecha (Lupa + Carrito) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Caja del buscador */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(14, 16, 21, 0.85);
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    border-radius: 40px;
+    padding: 2px 6px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-box:focus-within {
+    border-color: #ffcc00;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.35);
+}
+
+/* Input colapsable en móvil y escritorio */
+#input-buscador {
+    width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+/* Cuando se abre el buscador */
+.search-box.open #input-buscador {
+    width: 140px;          /* En móvil abre 140px para no tapar el logo */
+    padding: 6px 10px;
+}
+
+@media (min-width: 768px) {
+    .search-box.open #input-buscador {
+        width: 220px;      /* En PC abre más ancho */
+    }
+}
+
+/* Botón de la lupa */
+#btn-toggle-buscar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+/* --- MODAL FLOTANTE DE BÚSQUEDA GAMER --- */
+.modal-busqueda-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 12, 16, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 999999;
+    overflow-y: auto;
+    padding: 80px 20px 40px;
+}
+
+.modal-busqueda-overlay.activo {
+    display: block;
+}
+
+.modal-busqueda-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.modal-busqueda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+
+#titulo-resultados-modal {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    color: #ffcc00;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+#btn-cerrar-busqueda {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#btn-cerrar-busqueda:hover {
+    color: #ffcc00;
+}
+/* --- AJUSTE DE CUADRÍCULA EN EL BUSCADOR --- */
+#grid-resultados-busqueda {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    width: 100% !important;
+}
+
+/* Forzar que cada tarjeta mantenga su tamaño compacto gamer */
+#grid-resultados-busqueda .product-card {
+    width: 280px !important;
+    max-width: 280px !important;
+    margin: 0 !important;
+    flex: 0 0 280px !important;
+    cursor: default !important; /* Quita la mano de clic en la tarjeta general */
+}
+
+/* El botón de agregar sí mantiene el cursor interactivo */
+#grid-resultados-busqueda .btn-add,
+#grid-resultados-busqueda button {
+    cursor: pointer !important;
+}
+
+/* --- FICHA DETALLADA COMPLETA EN BUSCADOR --- */
+.ficha-busqueda-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #0f1117;
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 204, 0, 0.15);
+    border-radius: 4px;
+    padding: 24px;
+    gap: 30px;
+    max-width: 820px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.ficha-img-box {
+    flex: 1;
+    max-width: 340px;
+    text-align: center;
+}
+
+.ficha-img-box img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.ficha-info-box {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ficha-titulo {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.6rem !important;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.ficha-categoria {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.ficha-descripcion {
+    font-family: 'Montserrat', sans-serif;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 4px 0;
+}
+
+.ficha-precio {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.5rem !important;
+    color: #ffcc00;
+    margin: 6px 0;
+}
+
+.ficha-btn-add {
+    background: #ffcc00 !important;
+    color: #000000 !important;
+    border: none !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.9rem !important;
+    padding: 12px 20px !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    width: 100%;
+    max-width: 260px;
+}
+
+.ficha-btn-add:hover {
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.6) !important;
+    transform: scale(1.02);
+}
+
+/* En celulares se apila verticalmente */
+@media (max-width: 768px) {
+    .ficha-busqueda-card {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .ficha-img-box {
+        max-width: 100%;
+    }
+
+    .ficha-img-box img {
+        max-height: 250px;
+    }
+
+    .ficha-btn-add {
+        max-width: 100%;
+    }
+}
+
+/* Especificaciones técnicas de la figura */
+.ficha-specs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid #ffcc00;
+    padding: 10px 14px;
+    margin: 6px 0;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.spec-label {
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.spec-val {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Destacado del adelanto del 50% */
+.adelanto-box {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 6px;
+    margin-top: 4px;
+}
+
+.adelanto-val {
+    color: #ffcc00 !important;
+    font-weight: 800;
+}
+/* --- ALINEACIÓN HORIZONTAL DEL HEADER (BUSCADOR Y CARRITO JUNTOS) --- */
+
+/* Permitir que el logo que viaja y los botones sí reciban clics */
+#nav-logo-slot,
+.header-right {
+    pointer-events: auto !important;
+}
+
+/* Mantener buscador y carrito juntos horizontalmente a la derecha */
+.header-right {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+}
+
+/* Evitar que el buscador o el carrito se desalineen */
+.search-box {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+#cart-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+    /* Reduce la separación entre buscador y carrito */
+    .header-right {
+        gap: 6px !important;
+    }
+
+    /* La cápsula del buscador no se desborda */
+    .search-box {
+        max-width: 155px !important;
+        padding: 2px 6px !important;
+    }
+
+    /* El ancho del texto al abrirse se queda en un límite seguro */
+    .search-box.open #input-buscador {
+        width: 105px !important;       /* Tamaño justo para escribir sin tocar el logo */
+        padding: 4px 6px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Ícono de la lupa ligeramente más compacto */
+    #btn-toggle-buscar {
+        padding: 4px !important;
+    }
+
+    #btn-toggle-buscar svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
