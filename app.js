@@ -1099,11 +1099,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     rutaImg = `${p.nombre.toLowerCase().replace(/\s+/g, '_')}_1.jpeg`;
                 }
 
-                // 2. Propiedades reales: busca nombres con o sin tilde, mayúsculas o minúsculas
-                const alturaVal = p.altura || p.tamano || p.tamaño || p.dimensiones || p.medidas || p.size || '30 cm';
-                const tiempoVal = p.tiempoProduccion || p.tiempo || p.produccion || p.dias || p.tiempo_produccion || '7 a 10 días hábiles';
-                const materialVal = p.material || p.materiales || 'Resina Premium';
-                const descVal = p.descripcion || p.detalle || p.desc || 'Figura impresa en 3D con acabados de alta calidad.';
+                // Propiedades exactas según abrirDetalleModal
+                const descVal = p.descripcion || 'Figura impresa en 3D con acabados de alta calidad.';
+                const alturaVal = p.tamaño || p.tamano || 'Medida estándar';
+                const materialVal = p.material || 'PLA Premium / Resina';
+                
+                // Si la figura es de stock no muestra tiempo de producción
+                const esStock = (p.categoria === 'stock');
+                const tiempoVal = esStock ? null : (p.tiempoProduccion || '2 a 4 días hábiles');
 
                 return `
                 <div class="ficha-busqueda-card">
