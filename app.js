@@ -338,6 +338,53 @@ const inventario = [
         tiempoProduccion: "",
         material: "Resina"
     },
+     { 
+        id: 42,
+        nombre: "SNIPER", 
+        categoria: "chibis", 
+        precio: 120.00, 
+        imagenes: ["SNIPER.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
+     { 
+        id: 43,
+        nombre: "CENTAUR WARRUNNER", 
+        categoria: "chibis", 
+        precio: 120.00, 
+        imagenes: ["CENTA.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
+     { 
+        id: 44,
+        nombre: "SHADOW SHAMAN", 
+        categoria: "chibis", 
+        precio: 120.00, 
+        imagenes: ["SHAMAN.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
+     { 
+        id: 45,
+        nombre: "INVOKER", 
+        categoria: "chibis",
+        precio: 120.00, 
+        imagenes: ["INVO1.jpeg",
+                  "INVO2.jpeg",
+                  "INVO3.jpeg",
+                  "INVO4.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
 
     // CATEGORÍA: WAIFUS
     { 
