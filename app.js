@@ -111,6 +111,22 @@ const inventario = [
     },
 
     // CATEGORÍA: FIGURAS ÉPICAS
+        { 
+        id: 50, 
+        nombre: "SLARK", 
+        categoria: "epicas", 
+        precio: 420.00, 
+        imagenes: [
+            "1.jpeg",
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg"
+        ],
+        descripcion: "",
+        tamaño: "20 cm ",
+        tiempoProduccion: "10 dias",
+        material: "Resina "
+    },
     { 
         id: 1, 
         nombre: "MONKEY KING", 
