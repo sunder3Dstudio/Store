@@ -57,60 +57,24 @@ const inventario = [
         material: "Resina"
         
     },
-    // FIGURAS EN STOCK (Aparecen en el inicio)
-    { 
-        id: 101, 
-        nombre: "MONKEY KING", 
-        categoria: "stock", 
-        precio: 480.00, 
-        imagenes: [
-            "mk_1.jpeg",
-            "mk_2.jpeg",
-        ],
-        descripcion: "",
-        tamaño: "30 cm",
-        material: "Resina + PLA+"
-    },
-    { 
-        id: 102, 
-        nombre: "QUEEN OF PAIN", 
-        categoria: "stock", 
-        precio: 1500.00, 
-        imagenes: [
-            "qop_1.jpeg",
-            "qop_2.jpeg",
-            "qop_3.jpeg"
-        ],
-        descripcion: "",
-        tamaño: "55 cm",
-        material: "resina"
-    },
-    { 
-        id: 103, 
-        nombre: "LION (chibi)", 
-        categoria: "stock", 
-        precio: 120.00, 
-        imagenes: [
-            "lion_1.jpeg"
-        ],
-        descripcion: "",
-        tamaño: "12 cm",
-        material: "Resina"
-    },
-    { 
-        id: 104, 
-        nombre: "LLAVERO INMORTAL", 
-        categoria: "stock", 
-        precio: 30.00, 
-        imagenes: [
-            "inmortal.jpeg",
-        ],
-        descripcion: ".",
-        tamaño: "4.5 cm",
-        material: "Resina"
-    },
 
     // CATEGORÍA: FIGURAS ÉPICAS
+            { 
+        id: 50, 
+        nombre: "JAKIRO", 
+        categoria: "epicas", 
+        precio: 390, 
+        imagenes: [
+            "Jakiro1 (1).png",
+            "Jakiro2 (1).png",
+            "Jakiro3 (1).png"
+            ],
+        descripcion: "",
+        tamaño: "15 cm ",
+        tiempoProduccion: "10 dias",
+        material: "Resina "
+    },
+    
         { 
         id: 50, 
         nombre: "SLARK", 
