@@ -309,7 +309,18 @@ const inventario = [
         tiempoProduccion: "",
         material: "RESINA"
     },
-    
+
+       { 
+        id: 42,
+        nombre: "SNIPER", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: ["SNIPER.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
     { 
         id: 4, 
         nombre: "LION ", 
@@ -436,17 +447,7 @@ const inventario = [
         tiempoProduccion: "",
         material: "Resina"
     },
-     { 
-        id: 42,
-        nombre: "SNIPER", 
-        categoria: "chibis", 
-        precio: 144.00, 
-        imagenes: ["SNIPER.jpeg"],
-        descripcion: "",
-        tamaño: "12 cm",
-        tiempoProduccion: "",
-        material: "Resina"
-    },
+  
      { 
         id: 43,
         nombre: "CENTAUR WARRUNNER", 
