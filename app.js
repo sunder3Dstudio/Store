@@ -65,7 +65,7 @@ const inventario = [
         categoria: "epicas", 
         precio: 390, 
         imagenes: [
-            "Jakiro1 (1).png",
+            "Jakiro1.png",
             "Jakiro2 (1).png",
             "Jakiro3 (1).png"
             ],
