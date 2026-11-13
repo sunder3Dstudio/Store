@@ -91,6 +91,22 @@ const inventario = [
         tiempoProduccion: "10 dias",
         material: "Resina "
     },
+        { 
+        id: 2, 
+        nombre: "DROW RANGER", 
+        categoria: "epicas", 
+        precio: 550.00, 
+        imagenes: [
+            "dr_1.jpeg",
+            "dr_2.jpeg",
+            "dr_3.jpeg",
+            "dr_4.jpeg"
+        ],
+        descripcion: "",
+        tamaño: "34.5 cm",
+        tiempoProduccion: "15 dias",
+        material: "Resina + Base en PLA"
+    },
     { 
         id: 1, 
         nombre: "MONKEY KING", 
@@ -107,22 +123,7 @@ const inventario = [
         tiempoProduccion: "14 dias",
         material: "Resina "
     },
-    { 
-        id: 2, 
-        nombre: "DROW RANGER", 
-        categoria: "epicas", 
-        precio: 550.00, 
-        imagenes: [
-            "dr_1.jpeg",
-            "dr_2.jpeg",
-            "dr_3.jpeg",
-            "dr_4.jpeg"
-        ],
-        descripcion: "",
-        tamaño: "34.5 cm",
-        tiempoProduccion: "15 dias",
-        material: "Resina + Base en PLA"
-    },
+
     { 
         id: 34,
         nombre: "ABADDON", 
