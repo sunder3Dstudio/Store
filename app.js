@@ -60,7 +60,7 @@ const inventario = [
 
     // CATEGORÍA: FIGURAS ÉPICAS
             { 
-        id: 50, 
+        id: 51, 
         nombre: "JAKIRO", 
         categoria: "epicas", 
         precio: 390, 
