@@ -226,7 +226,7 @@ const inventario = [
         id: 3, 
         nombre: "PUDGE ", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: [
             "pudge_1.jpeg",
             "pudge_2.jpeg",
@@ -238,13 +238,101 @@ const inventario = [
         tiempoProduccion: "",
         material: "RESINA"
     },
+        { 
+        id: 60, 
+        nombre: "SNAPFIRE ", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: [
+            "Snapfire1.png",
+            "Snapfire2.png",
+            "Snapfire3.png"
+            
+        ],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "RESINA"
+    },
+      { 
+        id: 45,
+        nombre: "INVOKER", 
+        categoria: "chibis",
+        precio: 144.00, 
+        imagenes: ["INVO1.jpeg",
+                  "INVO2.jpeg",
+                  "INVO3.jpeg",
+                  "INVO4.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
+      { 
+        id: 61, 
+        nombre: "EARTHSHAKER ", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: [
+            "Earthshaker1.png",
+            "Earthshaker.png"
+        ],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "RESINA"
+    },
+        { 
+        id: 44,
+        nombre: "SHADOW SHAMAN", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: ["SHAMAN.jpeg"],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "Resina"
+    },
+        { 
+        id: 65, 
+        nombre: "CUSTON S. SHAMAN ", 
+        categoria: "chibis", 
+        precio: 170.00, 
+        imagenes: [
+            "SS quston especial1.png",
+            "SS quston especial2.png",
+            "SS quston especial3.png",
+            "SS quston especial4.png"
+        ],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "RESINA"
+    },
+    
     { 
         id: 4, 
         nombre: "LION ", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: [
             "lion_1.jpeg"
+        ],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "RESINA"
+    },
+     { 
+        id: 62, 
+        nombre: "TUSK ", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: [
+            "Tusk1.png",
+            "Tusk2.png",
+            "Tusk3.png",
+            "Tusk4.png"
         ],
         descripcion: "",
         tamaño: "12 cm",
@@ -255,18 +343,47 @@ const inventario = [
         id: 28,
         nombre: "DROW RANGER ", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["drowchibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
         tiempoProduccion: "",
         material: "Resina"
     },
+     { 
+        id: 63, 
+        nombre: "STORM SPIRIT ", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: [
+            "Storm spirit1.png",
+            "Storm spirit2.png",
+            "Storm spirit3.png"
+        ],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "RESINA"
+    },
+       { 
+        id: 64, 
+        nombre: "TINKER ", 
+        categoria: "chibis", 
+        precio: 144.00, 
+        imagenes: [
+            "Tinker1.png",
+            "Tinker.png"
+        ],
+        descripcion: "",
+        tamaño: "12 cm",
+        tiempoProduccion: "",
+        material: "RESINA"
+    },
     { 
         id: 29,
         nombre: "LARGO ", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["largochibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
@@ -276,7 +393,7 @@ const inventario = [
         id: 30,
         nombre: "MONKEY KING ", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["mkchibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
@@ -284,9 +401,9 @@ const inventario = [
         material: "Resina"
     },{ 
         id: 31,
-        nombre: "QUEEN OF PEIN ", 
+        nombre: "QUEEN OF PAIN ", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["qopchibi_1.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
@@ -312,7 +429,7 @@ const inventario = [
         id: 41,
         nombre: "RIKI", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["riki.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
@@ -323,7 +440,7 @@ const inventario = [
         id: 42,
         nombre: "SNIPER", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["SNIPER.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
@@ -334,38 +451,15 @@ const inventario = [
         id: 43,
         nombre: "CENTAUR WARRUNNER", 
         categoria: "chibis", 
-        precio: 120.00, 
+        precio: 144.00, 
         imagenes: ["CENTA.jpeg"],
         descripcion: "",
         tamaño: "12 cm",
         tiempoProduccion: "",
         material: "Resina"
     },
-     { 
-        id: 44,
-        nombre: "SHADOW SHAMAN", 
-        categoria: "chibis", 
-        precio: 120.00, 
-        imagenes: ["SHAMAN.jpeg"],
-        descripcion: "",
-        tamaño: "12 cm",
-        tiempoProduccion: "",
-        material: "Resina"
-    },
-     { 
-        id: 45,
-        nombre: "INVOKER", 
-        categoria: "chibis",
-        precio: 120.00, 
-        imagenes: ["INVO1.jpeg",
-                  "INVO2.jpeg",
-                  "INVO3.jpeg",
-                  "INVO4.jpeg"],
-        descripcion: "",
-        tamaño: "12 cm",
-        tiempoProduccion: "",
-        material: "Resina"
-    },
+ 
+   
 
     // CATEGORÍA: WAIFUS
     { 
